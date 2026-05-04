@@ -1,22 +1,39 @@
-from google_play_scraper import developer, app
+from google_play_scraper import app
 import json
 import time
 from datetime import datetime
 
-DEV_ID = "5630538819012062144"
 COUNTRY = "us"
 LANG = "en"
 
-apps = developer(DEV_ID, lang=LANG, country=COUNTRY)
+APP_IDS = [
+    "com.outfit7.talkingtom",
+    "com.outfit7.talkingben",
+    "com.outfit7.talkingtom2free",
+    "com.outfit7.talkingpierrefree",
+    "com.outfit7.talkingnewsfree",
+    "com.outfit7.talkinggingerfree",
+    "com.outfit7.talkingangelafree",
+    "com.outfit7.gingersbirthdayfree",
+    "com.outfit7.mytalkingtomfree",
+    "com.outfit7.mytalkingangelafree"
+    "com.outfit7.talkingtomgoldrun"
+    "com.outfit7.mytalkinghank"
+    "com.outfit7.mytalkingtom2"
+    "com.outfit7.herodash"
+    "com.outfit7.mytalkingtomfriends"
+    "com.outfit7.mytalkingangela2"
+    "com.outfit7.talkingtomtimerush"
+    "com.outfit7.ttfworld"
+    "com.outfit7.mytalkingtomfriends2"
+]
 
 result = {
     "checked_at": datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC"),
     "games": []
 }
 
-for item in apps:
-    app_id = item["appId"]
-
+for app_id in APP_IDS:
     try:
         info = app(app_id, lang=LANG, country=COUNTRY)
 
@@ -27,6 +44,7 @@ for item in apps:
             "url": f"https://play.google.com/store/apps/details?id={app_id}"
         })
 
+        print(f"OK: {app_id}")
         time.sleep(1)
 
     except Exception as e:
@@ -35,4 +53,4 @@ for item in apps:
 with open("updates.json", "w", encoding="utf-8") as f:
     json.dump(result, f, ensure_ascii=False, indent=2)
 
-print("Готово: updates.json обновлён")
+print("Готово")
