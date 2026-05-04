@@ -1,59 +1,157 @@
 {
-  "checked_at": "2026-05-04 15:45:01 UTC",
+  "checked_at": "2026-05-04 22:30:46 UTC",
   "games": [
     {
       "title": "Talking Tom Cat",
       "appId": "com.outfit7.talkingtom",
+      "icon": "https://play-lh.googleusercontent.com/m2H0K49W3XwG5N3nM4VvqHxPwdvb3-ExNhsSof2FU0o5OmG2UtsocAX6-HSTajJHCqKo8a1Gh6v-hrkfVfmWlA",
       "updated": 1766066710,
+      "updated_readable": "2025-12-18 14:05:10 UTC",
       "url": "https://play.google.com/store/apps/details?id=com.outfit7.talkingtom"
     },
     {
       "title": "Talking Ben the Dog",
       "appId": "com.outfit7.talkingben",
+      "icon": "https://play-lh.googleusercontent.com/UHJucY_bVsxX6haKhPt0e6Eua4N4MhJGOnrt3laNZXPMYDGUgPtLNISvdlkUvODwu00B",
       "updated": 1771512104,
+      "updated_readable": "2026-02-19 14:41:44 UTC",
       "url": "https://play.google.com/store/apps/details?id=com.outfit7.talkingben"
     },
     {
       "title": "Talking Tom Cat 2",
       "appId": "com.outfit7.talkingtom2free",
+      "icon": "https://play-lh.googleusercontent.com/UPORQPZ1ivAb2Vrm9vFAgadhxLXteosZDFFTNpsnMuYN7UBCIogQrYgoRTZAuFKFlw",
       "updated": 1768990533,
+      "updated_readable": "2026-01-21 10:15:33 UTC",
       "url": "https://play.google.com/store/apps/details?id=com.outfit7.talkingtom2free"
     },
     {
       "title": "Talking Pierre the Parrot",
       "appId": "com.outfit7.talkingpierrefree",
+      "icon": "https://play-lh.googleusercontent.com/vYywbPHTFsuWipMvmCjFNLhTQzAj6ECw4rXnW8M_t3CPgxSvlTdzrVmJYCBF6c_L2Q",
       "updated": 1761120981,
+      "updated_readable": "2025-10-22 08:16:21 UTC",
       "url": "https://play.google.com/store/apps/details?id=com.outfit7.talkingpierrefree"
     },
     {
       "title": "Talking Tom & Ben News",
       "appId": "com.outfit7.talkingnewsfree",
+      "icon": "https://play-lh.googleusercontent.com/-RVKFRhjQyJKEERkdsQaxbsckAnIZCJwfd6QWdkL1qWsEtsCzhAd-QzuAgeuGpXSRNI",
       "updated": 1761121232,
+      "updated_readable": "2025-10-22 08:20:32 UTC",
       "url": "https://play.google.com/store/apps/details?id=com.outfit7.talkingnewsfree"
     },
     {
       "title": "Talking Ginger",
       "appId": "com.outfit7.talkinggingerfree",
+      "icon": "https://play-lh.googleusercontent.com/PGsfR4iEUJqf7DG6cdJrCQWs8FOQGSoQuDfwh6BxPQs4mMvnU4SjX0CX87onlw1uBV4",
       "updated": 1761121064,
+      "updated_readable": "2025-10-22 08:17:44 UTC",
       "url": "https://play.google.com/store/apps/details?id=com.outfit7.talkinggingerfree"
     },
     {
       "title": "Talking Angela",
       "appId": "com.outfit7.talkingangelafree",
+      "icon": "https://play-lh.googleusercontent.com/gLGRqUe6_jVV3qKCqdI0vKiCGtTcDCuijqiLrSQqO0yTYGlu3WxoRw7RxjrKM-Uf4SY",
       "updated": 1761120884,
+      "updated_readable": "2025-10-22 08:14:44 UTC",
       "url": "https://play.google.com/store/apps/details?id=com.outfit7.talkingangelafree"
     },
     {
       "title": "Talking Ginger 2",
       "appId": "com.outfit7.gingersbirthdayfree",
+      "icon": "https://play-lh.googleusercontent.com/lA2g6-tGuf-xNa5jSEIK-rpKbctKHHL5YNhahCrgZkIDa5eahmnVbLBYH-S7nhoLDQ",
       "updated": 1761121145,
+      "updated_readable": "2025-10-22 08:19:05 UTC",
       "url": "https://play.google.com/store/apps/details?id=com.outfit7.gingersbirthdayfree"
     },
     {
       "title": "My Talking Tom",
       "appId": "com.outfit7.mytalkingtomfree",
+      "icon": "https://play-lh.googleusercontent.com/NYdtBII04HwY8fU2-BgU7_xAYJwfz2TUTou3D5R0lGiIjeyAy0n4oLDJdwUXII5sdA",
       "updated": 1776844278,
+      "updated_readable": "2026-04-22 07:51:18 UTC",
       "url": "https://play.google.com/store/apps/details?id=com.outfit7.mytalkingtomfree"
+    },
+    {
+      "title": "My Talking Angela",
+      "appId": "com.outfit7.mytalkingangelafree",
+      "icon": "https://play-lh.googleusercontent.com/rdMpsc5VkkG4JGHIFqNREbWBzXxkZBHN7ZA86DqcZEMmtwWy58NLVDuqWgoG2XCAu4Q",
+      "updated": 1773672314,
+      "updated_readable": "2026-03-16 14:45:14 UTC",
+      "url": "https://play.google.com/store/apps/details?id=com.outfit7.mytalkingangelafree"
+    },
+    {
+      "title": "Talking Tom Gold Run",
+      "appId": "com.outfit7.talkingtomgoldrun",
+      "icon": "https://play-lh.googleusercontent.com/ausafKLnuaYPIsa9DuJn3k1L9Q2t4pAwg35GkRJDHvUmB1Oc8_00oZ0MblwDimctX1w",
+      "updated": 1775742075,
+      "updated_readable": "2026-04-09 13:41:15 UTC",
+      "url": "https://play.google.com/store/apps/details?id=com.outfit7.talkingtomgoldrun"
+    },
+    {
+      "title": "My Talking Hank: Islands",
+      "appId": "com.outfit7.mytalkinghank",
+      "icon": "https://play-lh.googleusercontent.com/BNFM2OG1bfNW6bAmF8mIMPocNUsj0bqiFW-ccrsIsZHDvdxeEoDb88wElvujDcR6QTXl",
+      "updated": 1776862352,
+      "updated_readable": "2026-04-22 12:52:32 UTC",
+      "url": "https://play.google.com/store/apps/details?id=com.outfit7.mytalkinghank"
+    },
+    {
+      "title": "My Talking Tom 2: Pet Game",
+      "appId": "com.outfit7.mytalkingtom2",
+      "icon": "https://play-lh.googleusercontent.com/H8nlQ_ndfuPBThkQp0dOAJPQgT9f2JmIXw93rjXmJVkOVNgPgo-Na7i6xuaMTcRrxhzJSZ4JG592AfIyhI6bEQ",
+      "updated": 1776692960,
+      "updated_readable": "2026-04-20 13:49:20 UTC",
+      "url": "https://play.google.com/store/apps/details?id=com.outfit7.mytalkingtom2"
+    },
+    {
+      "title": "Talking Tom: Hero Dash Run",
+      "appId": "com.outfit7.herodash",
+      "icon": "https://play-lh.googleusercontent.com/VlaJtKyFJsTTaVMK2N1QN_mKGndN7Erv2QoTq-qayeKZ1XxZNk_Xyrv2XirSNKFrkaeNBuM75rEi5yEXrCc2",
+      "updated": 1774622203,
+      "updated_readable": "2026-03-27 14:36:43 UTC",
+      "url": "https://play.google.com/store/apps/details?id=com.outfit7.herodash"
+    },
+    {
+      "title": "My Talking Tom Friends",
+      "appId": "com.outfit7.mytalkingtomfriends",
+      "icon": "https://play-lh.googleusercontent.com/WY69uGwaQPUx5vS9bxF3sm4mc9N1ZzvVHVqLrZOycExHb6m8A2v5hGoroTRjih1a_d4Y",
+      "updated": 1776945883,
+      "updated_readable": "2026-04-23 12:04:43 UTC",
+      "url": "https://play.google.com/store/apps/details?id=com.outfit7.mytalkingtomfriends"
+    },
+    {
+      "title": "My Talking Angela 2",
+      "appId": "com.outfit7.mytalkingangela2",
+      "icon": "https://play-lh.googleusercontent.com/9RX2MDijJWyRE2GzVVKzmBHbIYZaafNPNLGxCfnCX9m1OR9eZ-dz0cS1h1UD46Z9ZYrdy5rQhRCeVujrE0haww",
+      "updated": 1776260846,
+      "updated_readable": "2026-04-15 13:47:26 UTC",
+      "url": "https://play.google.com/store/apps/details?id=com.outfit7.mytalkingangela2"
+    },
+    {
+      "title": "Talking Tom Time Rush",
+      "appId": "com.outfit7.talkingtomtimerush",
+      "icon": "https://play-lh.googleusercontent.com/mhRASSUl1bBUnBLS30GqrS0PKA3r9wA0gZjCCXICryqOQCUlr5gqmOMG6CQA5IsTr6Q",
+      "updated": 1770123947,
+      "updated_readable": "2026-02-03 13:05:47 UTC",
+      "url": "https://play.google.com/store/apps/details?id=com.outfit7.talkingtomtimerush"
+    },
+    {
+      "title": "Talking Tom & Friends: World",
+      "appId": "com.outfit7.ttfworld",
+      "icon": "https://play-lh.googleusercontent.com/n4ZqjX0qLF36e_Ny5E3VQqbTNiwxh208QWgOrEcWJUFy0NYZz0Z_1AKCN1d9ymNvaQ",
+      "updated": 1776693907,
+      "updated_readable": "2026-04-20 14:05:07 UTC",
+      "url": "https://play.google.com/store/apps/details?id=com.outfit7.ttfworld"
+    },
+    {
+      "title": "My Talking Tom Friends 2",
+      "appId": "com.outfit7.mytalkingtomfriends2",
+      "icon": "https://play-lh.googleusercontent.com/yuivsShZkyfg0ITz9azBh-ZU6p-XtbWRpJ1qA_3nEPtZcvrBMrmufyJROLtK-2X9nBg_iDA_IwIHTn3Mw1V2y0A",
+      "updated": 1777026866,
+      "updated_readable": "2026-04-24 10:34:26 UTC",
+      "url": "https://play.google.com/store/apps/details?id=com.outfit7.mytalkingtomfriends2"
     }
   ]
 }
