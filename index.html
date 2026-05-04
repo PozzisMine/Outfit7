@@ -3,69 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <title>Обновления Outfit7</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body { font-family: Arial; background:#f4f6f8; padding:20px; }
 h1 { text-align:center; }
-
 button {
-  display:block;
-  margin:20px auto;
-  padding:12px 20px;
-  background:#2563eb;
-  color:white;
-  border:none;
-  border-radius:10px;
+  display:block; margin:20px auto; padding:14px 22px;
+  background:#2563eb; color:white; border:none; border-radius:12px;
+  font-size:16px;
 }
-
 .game {
-  background:white;
-  margin:10px auto;
-  max-width:700px;
-  padding:12px;
-  border-radius:10px;
-  display:flex;
-  gap:10px;
+  background:white; margin:12px auto; max-width:760px; padding:14px;
+  border-radius:14px; display:flex; gap:12px; align-items:center;
 }
-
-img { width:64px; border-radius:12px; }
+img { width:64px; height:64px; border-radius:14px; }
+.title { font-weight:bold; font-size:18px; }
+.info { text-align:center; margin-bottom:15px; }
 </style>
 </head>
 
 <body>
-
 <h1>Обновления Outfit7</h1>
 
-<button onclick="load()">🔄 Обновить</button>
+<button onclick="check()">🔄 Проверить обновления</button>
 
-<div id="info"></div>
+<div class="info" id="info">Нажми кнопку для проверки</div>
 <div id="list"></div>
 
 <script>
-async function load() {
-  const res = await fetch("updates.json?t=" + Date.now());
-  const data = await res.json();
+const WORKER_URL = "https://divine-flower-94b4.qpqalzmnx96.workers.dev/";
 
-  document.getElementById("info").innerText =
-    "Проверено: " + data.checked_at;
-
+async function check() {
+  const info = document.getElementById("info");
   const list = document.getElementById("list");
+
+  info.innerText = "Проверяем...";
   list.innerHTML = "";
 
-  data.games.forEach(g => {
-    list.innerHTML += `
-      <div class="game">
-        <img src="${g.icon}">
-        <div>
-          <b>${g.title}</b><br>
-          ${g.updated_readable}<br>
-          <a href="${g.url}" target="_blank">Открыть</a>
+  try {
+    const res = await fetch(WORKER_URL + "?t=" + Date.now(), { cache: "no-store" });
+    const data = await res.json();
+
+    info.innerText = "Проверено: " + new Date(data.checked_at).toLocaleString("ru-RU");
+
+    data.games.forEach(game => {
+      list.innerHTML += `
+        <div class="game">
+          <img src="${game.icon}" alt="">
+          <div>
+            <div class="title">${game.title}</div>
+            <div>ID: ${game.appId}</div>
+            <div>Дата обновления: ${game.updated}</div>
+            <a href="${game.url}" target="_blank">Открыть в Google Play</a>
+          </div>
         </div>
-      </div>
-    `;
-  });
+      `;
+    });
+
+  } catch (e) {
+    info.innerText = "Ошибка проверки";
+  }
 }
 </script>
-
 </body>
 </html>
