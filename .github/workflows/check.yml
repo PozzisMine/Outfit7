@@ -1,0 +1,34 @@
+name: Check Google Play Updates
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Скачать репозиторий
+        uses: actions/checkout@v4
+
+      - name: Установить Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Установить библиотеки
+        run: pip install -r requirements.txt
+
+      - name: Проверить Google Play
+        run: python check_updates.py
+
+      - name: Сохранить updates.json
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add updates.json
+          git commit -m "Update Google Play data" || echo "No changes"
+          git push
