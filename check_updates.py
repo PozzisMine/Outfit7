@@ -37,21 +37,18 @@ for app_id in APP_IDS:
     try:
         info = app(app_id, lang=LANG, country=COUNTRY)
 
-        updated = info.get("updated")
-        updated_readable = "Не найдено"
+        ts = info.get("updated")
+        readable = "Не найдено"
 
-        if updated:
-            updated_readable = datetime.fromtimestamp(
-                updated,
-                timezone.utc
-            ).strftime("%Y-%m-%d %H:%M:%S UTC")
+        if ts:
+            readable = datetime.fromtimestamp(ts, timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
 
         result["games"].append({
             "title": info.get("title"),
             "appId": app_id,
             "icon": info.get("icon"),
-            "updated": updated,
-            "updated_readable": updated_readable,
+            "updated": ts,
+            "updated_readable": readable,
             "url": f"https://play.google.com/store/apps/details?id={app_id}"
         })
 
@@ -64,4 +61,4 @@ for app_id in APP_IDS:
 with open("updates.json", "w", encoding="utf-8") as f:
     json.dump(result, f, ensure_ascii=False, indent=2)
 
-print("Готово: updates.json обновлён")
+print("Готово")
