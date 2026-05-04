@@ -1,7 +1,7 @@
 from google_play_scraper import app
 import json
 import time
-from datetime import datetime
+from datetime import datetime, timezone
 
 COUNTRY = "us"
 LANG = "en"
@@ -16,20 +16,20 @@ APP_IDS = [
     "com.outfit7.talkingangelafree",
     "com.outfit7.gingersbirthdayfree",
     "com.outfit7.mytalkingtomfree",
-    "com.outfit7.mytalkingangelafree"
-    "com.outfit7.talkingtomgoldrun"
-    "com.outfit7.mytalkinghank"
-    "com.outfit7.mytalkingtom2"
-    "com.outfit7.herodash"
-    "com.outfit7.mytalkingtomfriends"
-    "com.outfit7.mytalkingangela2"
-    "com.outfit7.talkingtomtimerush"
-    "com.outfit7.ttfworld"
+    "com.outfit7.mytalkingangelafree",
+    "com.outfit7.talkingtomgoldrun",
+    "com.outfit7.mytalkinghank",
+    "com.outfit7.mytalkingtom2",
+    "com.outfit7.herodash",
+    "com.outfit7.mytalkingtomfriends",
+    "com.outfit7.mytalkingangela2",
+    "com.outfit7.talkingtomtimerush",
+    "com.outfit7.ttfworld",
     "com.outfit7.mytalkingtomfriends2"
 ]
 
 result = {
-    "checked_at": datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC"),
+    "checked_at": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC"),
     "games": []
 }
 
@@ -37,14 +37,25 @@ for app_id in APP_IDS:
     try:
         info = app(app_id, lang=LANG, country=COUNTRY)
 
+        updated = info.get("updated")
+        updated_readable = "Не найдено"
+
+        if updated:
+            updated_readable = datetime.fromtimestamp(
+                updated,
+                timezone.utc
+            ).strftime("%Y-%m-%d %H:%M:%S UTC")
+
         result["games"].append({
             "title": info.get("title"),
             "appId": app_id,
-            "updated": info.get("updated"),
+            "icon": info.get("icon"),
+            "updated": updated,
+            "updated_readable": updated_readable,
             "url": f"https://play.google.com/store/apps/details?id={app_id}"
         })
 
-        print(f"OK: {app_id}")
+        print("OK:", app_id)
         time.sleep(1)
 
     except Exception as e:
@@ -53,4 +64,4 @@ for app_id in APP_IDS:
 with open("updates.json", "w", encoding="utf-8") as f:
     json.dump(result, f, ensure_ascii=False, indent=2)
 
-print("Готово")
+print("Готово: updates.json обновлён")
