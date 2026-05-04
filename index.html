@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Проверка обновлений Outfit7</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      padding: 20px;
+      color: #222;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .info {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    .game {
+      background: white;
+      max-width: 750px;
+      margin: 12px auto;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Обновления игр Outfit7</h1>
+  <div class="info" id="info">Загрузка...</div>
+  <div id="list"></div>
+
+  <script>
+    async function loadUpdates() {
+      const response = await fetch("updates.json?time=" + Date.now());
+      const data = await response.json();
+
+      document.getElementById("info").innerHTML =
+        "Последняя ручная проверка: " + data.checked_at;
+
+      const list = document.getElementById("list");
+      list.innerHTML = "";
+
+      data.games.forEach(game => {
+        list.innerHTML += `
+          <div class="game">
+            <div class="title">${game.title}</div>
+            <div>ID: ${game.appId}</div>
+            <div>Дата обновления: ${game.updated}</div>
+            <div><a href="${game.url}" target="_blank">Открыть в Google Play</a></div>
+          </div>
+        `;
+      });
+    }
+
+    loadUpdates();
+  </script>
+</body>
+</html>
