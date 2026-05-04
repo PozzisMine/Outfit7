@@ -11,24 +11,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Скачать репозиторий
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Установить Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Установить библиотеки
+      - name: Install deps
         run: pip install -r requirements.txt
 
-      - name: Проверить Google Play
+      - name: Run script
         run: python check_updates.py
 
-      - name: Сохранить updates.json
+      - name: Commit updates.json
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add updates.json
-          git commit -m "Update Google Play data" || echo "No changes"
+          git commit -m "Update data" || echo "No changes"
           git push
