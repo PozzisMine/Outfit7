@@ -1,110 +1,71 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Обновления игр Outfit7</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Обновления Outfit7</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f8;
-      margin: 0;
-      padding: 20px;
-      color: #222;
-    }
+<style>
+body { font-family: Arial; background:#f4f6f8; padding:20px; }
+h1 { text-align:center; }
 
-    h1 {
-      text-align: center;
-    }
+button {
+  display:block;
+  margin:20px auto;
+  padding:12px 20px;
+  background:#2563eb;
+  color:white;
+  border:none;
+  border-radius:10px;
+}
 
-    .info {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #555;
-    }
+.game {
+  background:white;
+  margin:10px auto;
+  max-width:700px;
+  padding:12px;
+  border-radius:10px;
+  display:flex;
+  gap:10px;
+}
 
-    .game {
-      background: white;
-      max-width: 760px;
-      margin: 12px auto;
-      padding: 15px;
-      border-radius: 14px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      display: flex;
-      gap: 14px;
-      align-items: center;
-    }
-
-    .icon {
-      width: 64px;
-      height: 64px;
-      border-radius: 14px;
-    }
-
-    .title {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 6px;
-    }
-
-    a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-
-    .error {
-      text-align: center;
-      color: red;
-      font-weight: bold;
-    }
-  </style>
+img { width:64px; border-radius:12px; }
+</style>
 </head>
 
 <body>
-  <h1>Обновления игр Outfit7</h1>
 
-  <div class="info" id="info">Загрузка...</div>
-  <div id="list"></div>
+<h1>Обновления Outfit7</h1>
 
-  <script>
-    async function loadUpdates() {
-      const info = document.getElementById("info");
-      const list = document.getElementById("list");
+<button onclick="load()">🔄 Обновить</button>
 
-      try {
-        const response = await fetch("updates.json?time=" + Date.now());
+<div id="info"></div>
+<div id="list"></div>
 
-        if (!response.ok) {
-          throw new Error("Файл updates.json не найден");
-        }
+<script>
+async function load() {
+  const res = await fetch("updates.json?t=" + Date.now());
+  const data = await res.json();
 
-        const data = await response.json();
+  document.getElementById("info").innerText =
+    "Проверено: " + data.checked_at;
 
-        info.innerHTML = "Последняя проверка: " + data.checked_at;
-        list.innerHTML = "";
+  const list = document.getElementById("list");
+  list.innerHTML = "";
 
-        data.games.forEach(game => {
-          list.innerHTML += `
-            <div class="game">
-              <img class="icon" src="${game.icon}" alt="">
-              <div>
-                <div class="title">${game.title}</div>
-                <div>ID: ${game.appId}</div>
-                <div>Дата обновления: ${game.updated_readable}</div>
-                <div><a href="${game.url}" target="_blank">Открыть в Google Play</a></div>
-              </div>
-            </div>
-          `;
-        });
+  data.games.forEach(g => {
+    list.innerHTML += `
+      <div class="game">
+        <img src="${g.icon}">
+        <div>
+          <b>${g.title}</b><br>
+          ${g.updated_readable}<br>
+          <a href="${g.url}" target="_blank">Открыть</a>
+        </div>
+      </div>
+    `;
+  });
+}
+</script>
 
-      } catch (error) {
-        info.innerHTML = "";
-        list.innerHTML = `<div class="error">${error.message}</div>`;
-      }
-    }
-
-    loadUpdates();
-  </script>
 </body>
 </html>
